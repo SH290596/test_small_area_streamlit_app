@@ -11,7 +11,7 @@ from urllib import request
 st.set_page_config(layout="wide")
 
 
-@st.experimental_memo(allow_output_mutation=True)
+@st.experimental_memo()
 def load_data():
     # return pd.read_csv(r'C:\Users\David\django_project\streamlit_app\combined_df.csv')
     url = 'https://github.com/SH290596/test_small_area_streamlit_app/blob/main/data/small_area_data_v2.shp?raw=True'
