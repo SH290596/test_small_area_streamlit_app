@@ -5,6 +5,7 @@ import pydeck as pdk
 import geopandas as gpd
 import streamlit as st
 import json
+import urllib
 
 st.set_page_config(layout="wide")
 
@@ -12,9 +13,10 @@ st.set_page_config(layout="wide")
 @st.cache(allow_output_mutation=True)
 def load_data():
     # return pd.read_csv(r'C:\Users\David\django_project\streamlit_app\combined_df.csv')
-    url = 'https://github.com/SH290596/test_small_area_streamlit_app/blob/main/data/small_area_data_v2.shp?raw=true'
+    url = 'https://github.com/SH290596/test_small_area_streamlit_app/blob/main/data/small_area_data_v2.shp?raw=True'
+    sf = urllib.request.urlretrieve(url, "small_area_data_v2.shp")
     shapefile = gpd.read_file(
-        url
+        sf[0]
     )
     return shapefile
 
