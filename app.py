@@ -12,8 +12,9 @@ st.set_page_config(layout="wide")
 @st.cache(allow_output_mutation=True)
 def load_data():
     # return pd.read_csv(r'C:\Users\David\django_project\streamlit_app\combined_df.csv')
+    url = 'https://github.com/SH290596/test_small_area_streamlit_app/blob/main/data/small_area_data_v2.shp?raw=true'
     shapefile = gpd.read_file(
-        r"C:\Users\david_olbcs1b\OneDrive\Documents\Stephen Henry\Project Green Homes\Chadwicks - Dashboard Streamlit\streamlit_app\streamlit_app\small_area_data_v2.shp"
+        url
     )
     return shapefile
 
