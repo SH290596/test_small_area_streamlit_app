@@ -6,6 +6,7 @@ import geopandas as gpd
 import streamlit as st
 import json
 import urllib
+from urllib import request
 
 st.set_page_config(layout="wide")
 
